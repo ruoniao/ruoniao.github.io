@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>大数据集群环境搭建</title>
+      <link href="/2018/03/20/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-4/"/>
+      <url>/2018/03/20/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-4/</url>
+      <content type="html"><![CDATA[<h1 id="大数据集群环境搭建"><a href="#大数据集群环境搭建" class="headerlink" title="大数据集群环境搭建"></a>大数据集群环境搭建</h1><a id="more"></a><h2 id="hadoop环境搭建"><a href="#hadoop环境搭建" class="headerlink" title="hadoop环境搭建"></a>hadoop环境搭建</h2><ul><li>免密登录设置</li></ul><h2 id="spark环境搭建"><a href="#spark环境搭建" class="headerlink" title="spark环境搭建"></a>spark环境搭建</h2>]]></content>
+      
+      <categories>
+          
+          <category> BigData </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hadoop </tag>
+            
+            <tag> spark </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>从0搭建Spark集群</title>
+      <link href="/2018/03/19/%E4%BB%8E0%E6%90%AD%E5%BB%BASpark%E9%9B%86%E7%BE%A4/"/>
+      <url>/2018/03/19/%E4%BB%8E0%E6%90%AD%E5%BB%BASpark%E9%9B%86%E7%BE%A4/</url>
+      <content type="html"><![CDATA[<h1 id="从0搭建Spark集群"><a href="#从0搭建Spark集群" class="headerlink" title="从0搭建Spark集群"></a>从0搭建Spark集群</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul><li>ubuntu三台虚拟机<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><h3 id="设置免密登录"><a href="#设置免密登录" class="headerlink" title="设置免密登录"></a>设置免密登录</h3></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> hadoop,spark,linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
+</search>
