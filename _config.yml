@@ -38,7 +38,7 @@ defaults:
     values:
       comments: false
 
-# google_analytics: "G-5SFP2TKSL7"
+google_analytics: "G-8T0256ERR4"
 
 # development configurations
 host: 0.0.0.0
