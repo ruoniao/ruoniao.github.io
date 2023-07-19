@@ -1,5 +1,5 @@
-title: ruoniao's Blog
-description: ruoniao's Blog
+title: 若鸟的博客
+description: 若鸟的博客
 
 url: https://ruoniao.github.io
 paginate_path: "blog/page:num/"
@@ -21,14 +21,14 @@ navigation:
    url: /categories
  - title: About
    url: /about
- - title: Donate
-   url: /donate
+# - title: Donate
+#   url: /donate
 
 social:
    github: ruoniao
-   linkedin: in/yanan-zhao-7691317b?trk=hp-identity-photo
-   facebook: profile.php?id=100014334455077
-   email: ruoniao@hotmail.com
+   #linkedin: in/yanan-zhao-7691317b?trk=hp-identity-photo
+   #facebook: profile.php?id=100014334455077
+   email: ruoniao.zg@gmail.com
 
 defaults:
   -
