@@ -35,6 +35,7 @@ kvm log日志：
   arch/x86/kvm/vmx/vmx.c
       
   /*
+  关键数据结构
    * VMX-specific KVM operations for Intel VT-x support.处理vm_exit的函数handle_exit
    */
   static struct kvm_x86_ops vmx_x86_ops __initdata = {
@@ -84,6 +85,7 @@ kvm log日志：
   };
   
   /*
+  关键数据结构
   handle_exit reason对应的不同的处理函数，其中EXIT_REASON_MSR_WRITE是处理蓝屏报错的关键处理函数
   一个函数指针数组，其中每个元素都是指向函数的指针。数组的元素类型是：int (*)(struct kvm_vcpu *vcpu)，
   这表示数组中的每个元素都是一个指向接收 struct kvm_vcpu * 参数并返回 int 类型值的函数的指针
@@ -103,6 +105,7 @@ kvm log日志：
   	[EXIT_REASON_VMCALL]                  = kvm_emulate_hypercall,      /* 模拟VMCALL指令 */
   };
   
+  /* vmx 入口函数 */
   static int __init vmx_init(void){
       ...
       /* 初始化kvm */ 
@@ -117,6 +120,7 @@ kvm log日志：
 其中kvm_init 调用virt/kvm/kvm_main.c的kvm_init，kvm_init调用hardware_setup,其中对msr寄存器进行操作，msr寄存器主要用于存储和控制与处理器相关的特定硬件状态或功能，在kvm中控制虚拟机的状态和硬件访问权限。
 
 ```c
+/* kvm设置硬件特性函数 */
 int kvm_arch_hardware_setup(void *opaque)
 {
 	struct kvm_x86_init_ops *ops = opaque;
@@ -143,6 +147,7 @@ int kvm_arch_hardware_setup(void *opaque)
 	return 0;
 }
 
+/* kvm初始化函数 */
 int kvm_init(void *opaque, unsigned vcpu_size, unsigned vcpu_align,
 		  struct module *module)
 {
@@ -225,7 +230,7 @@ vmx.c 的设置硬件函数
 
 ```c
 /*
-vmx intel 设置硬件注册函数
+vmx intel 设置硬件注册函数，由kvm kvm_arch_hardware_setup调用
 */
 static __init int hardware_setup(void){
     ...
@@ -247,11 +252,12 @@ static __init int hardware_setup(void){
 	return r;
 }
 
+/* 关键数据结构vmcs */
 struct vmcs_hdr {
 	u32 revision_id:31;
 	u32 shadow_vmcs:1;
 };
-
+/* 关键数据结构vmcs */
 struct vmcs {
 	struct vmcs_hdr hdr;
 	u32 abort;
@@ -324,7 +330,7 @@ void kvm_vcpu_kick(struct kvm_vcpu *vcpu)
 }
 ```
 
-继续查看vmx_handle_exit
+继续查看在kvm_vmx_exit_handlers注册的vmx_handle_exit函数，用于处理vmx_exit
 
 ```c
 static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
@@ -355,7 +361,7 @@ int kvm_emulate_wrmsr(struct kvm_vcpu *vcpu)
 	u32 ecx = kvm_rcx_read(vcpu);
 	u64 data = kvm_read_edx_eax(vcpu);
 	int r;
-
+    /* 静态调用机制 kvm_x86_complete_emulated_msr 即 vmx_set_msr*/
 	r = kvm_set_msr(vcpu, ecx, data);
 
 	/* MSR write failed? See if we should ask user space */
@@ -371,7 +377,7 @@ int kvm_emulate_wrmsr(struct kvm_vcpu *vcpu)
 		trace_kvm_msr_write(ecx, data);
 	else
 		trace_kvm_msr_write_ex(ecx, data);
-
+	
 	return static_call(kvm_x86_complete_emulated_msr)(vcpu, r);
 }
 
@@ -386,6 +392,7 @@ static int kvm_set_msr_ignored_check(struct kvm_vcpu *vcpu,
 	int ret = __kvm_set_msr(vcpu, index, data, host_initiated);
 
 	if (ret == KVM_MSR_RET_INVALID)
+        /* 是否忽略msr不可用返回*/
 		if (kvm_msr_ignored_check(index, data, true))
 			ret = 0;
 
