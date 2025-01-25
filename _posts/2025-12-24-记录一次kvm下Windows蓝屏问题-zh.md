@@ -15,7 +15,9 @@ published: true
 
 kvm log日志：
 
-[12787289.097685] kvm [21277]: vcpu1, guest rIP: 0xfffff80003cd1ae3 vmx_set_msr: BTF|LBR in IA32_DEBUGCTLMSR 0x1, nop
+```shell
+[12787289.097685] kvm [21277]: vcpu1, guest rIP: 0xfffff80003cd1ae3 vmx_set_msr: BTF | LBR in IA32_DEBUGCTLMSR 0x1, nop
+```
 
 # 解决方式
 
