@@ -7,6 +7,8 @@ categories: kvm,linux
 published: true
 ---
 
+TOC {:toc}
+
 # 现象
 
 在linux kernel5.10中，kvm虚拟机windows在设置了硬件断点进行debug时报蓝屏。
