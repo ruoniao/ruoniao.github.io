@@ -1,9 +1,5 @@
 # DPDK 搭建
 
-https://blog.csdn.net/locahuang/article/details/120356849
-
-https://www.cnblogs.com/wt11/p/15936005.html
-
 ## Example 
 
 | 示例名称         | 描述                                                        | 功能                                                         | 学习目标                                           |
