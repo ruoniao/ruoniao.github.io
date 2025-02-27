@@ -125,7 +125,7 @@ kvm log日志：
   }
   ```
 
-其中kvm_init 调用virt/kvm/kvm_main.c的kvm_init，kvm_init调用hardware_setup,其中对msr寄存器进行操作，msr寄存器主要用于存储和控制与处理器相关的特定硬件状态或功能，在kvm中控制虚拟机的状态和硬件访问权限。
+其中kvm_init 调用virt/kvm/kvm_main.c的kvm_init，kvm_init调用hardware_setup,其中对msr寄存器进行操作，**<mark>msr寄存器主要用于存储和控制与处理器相关的特定硬件状态或功能，在kvm中控制虚拟机的状态和硬件访问权限。<mark>**
 
 ```c
 /* kvm设置硬件特性函数 */
