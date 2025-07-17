@@ -7,5 +7,7 @@ categories: kernel
 published: true
 ---
 
-最近梳理了下linux 从收包到用户态poll的流程图，记录在此[pdf](https://ruoniao.github.io/assets/img/driver2poll.pdf)中
+最近梳理了下linux 从收包到用户态poll的流程图，记录在此[pdf](https://ruoniao.github.io/assets/img/driver2poll.pdf)中，从可以了精确的了解到：
 
+- 为什么tcpdump抓取不到xdp的数据包。
+- 为什么poo/epoll本质上不是异步IO，本质在哪里。
