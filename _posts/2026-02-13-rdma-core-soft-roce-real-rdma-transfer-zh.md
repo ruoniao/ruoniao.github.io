@@ -3,8 +3,9 @@ clayout    : post
 title     : "从源码到实战：rdma-core + Soft-RoCE 搭建真实 RDMA 文件传输"
 date      : 2026-02-13
 lastupdate: 2026-02-13
-categories: network,rdma
+categories: rdma
 ---
+
 ----
 
 * TOC
@@ -12,6 +13,7 @@ categories: network,rdma
 
 ----
 
+文本由codex skill自动生成
 # 前言：把 RDMA 当成工程来学
 
 RDMA 不是单个 API，而是一套需要“控制面 + 数据面 + 设备层”协作的工程体系。很多人卡在入门阶段，不是因为概念太难，而是因为缺少一个能跑通、可拆解、可调试的最小工程。
