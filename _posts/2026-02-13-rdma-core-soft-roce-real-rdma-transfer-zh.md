@@ -1,17 +1,15 @@
-﻿---
-clayout    : post
+---
+layout: post
 title     : "从源码到实战：rdma-core + Soft-RoCE 搭建真实 RDMA 文件传输"
 date      : 2026-02-13
 lastupdate: 2026-02-13
-categories: rdma
+categories: [rdma]
 ---
 
-----
 
 * TOC
 {:toc}
 
-----
 
 文本由codex skill自动生成
 # 前言：把 RDMA 当成工程来学
@@ -44,7 +42,7 @@ RDMA 不是单个 API，而是一套需要“控制面 + 数据面 + 设备层�
 - **Send/Recv**：双边操作，需要先 `post_recv`。
 - **RDMA Write**：单边操作，依赖对端 MR 的地址和 rkey。
 
-这些对象是 verbs API 的核心语义，对应到 libibverbs 的常用调用。citeturn0search4turn0search5
+这些对象是 verbs API 的核心语义，对应到 libibverbs 的常用调用。
 
 # 控制面流程：RDMA CM 的“连接脚手架”
 
@@ -53,13 +51,13 @@ RDMA CM 负责连接管理，流程类似 socket，但需要显式的地址解�
 - Client：`rdma_resolve_addr` → `rdma_resolve_route` → `rdma_connect`
 - Server：`rdma_bind_addr` → `rdma_listen` → `rdma_accept`
 
-这一流程可以在 `rdma_cm(7)` 文档中直接验证。citeturn0search3
+这一流程可以在 `rdma_cm(7)` 文档中直接验证。
 
 # Soft-RoCE：没有硬件也能跑 RDMA
 
-Soft-RoCE（RXE）是 RoCE 的软件实现，允许普通网卡以 RDMA 方式工作。核心步骤是加载 `rdma_rxe` 模块，并使用 `rdma link add` 创建 RDMA 设备。官方文档明确说明应优先使用 `rdma link`，而 `rxe_cfg` 已经被标记为 deprecated。citeturn0search6turn0search2turn0search7
+Soft-RoCE（RXE）是 RoCE 的软件实现，允许普通网卡以 RDMA 方式工作。核心步骤是加载 `rdma_rxe` 模块，并使用 `rdma link add` 创建 RDMA 设备。官方文档明确说明应优先使用 `rdma link`，而 `rxe_cfg` 已经被标记为 deprecated。
 
-在一些系统文档中，也可以看到 Soft-RoCE 的完整配置流程与注意事项。citeturn0search0
+在一些系统文档中，也可以看到 Soft-RoCE 的完整配置流程与注意事项。
 
 # 工程结构：让每个模块职责清晰
 
@@ -107,7 +105,7 @@ Soft-RoCE（RXE）是 RoCE 的软件实现，允许普通网卡以 RDMA 方式�
 5. 等 FIN → 落盘 → 回 ACK
 6. 清理资源
 
-其中，“先 post_recv 再 send”是 Send/Recv 的硬性规则。citeturn0search5
+其中，“先 post_recv 再 send”是 Send/Recv 的硬性规则。
 
 # CQ 轮询与事件驱动：为什么 demo 用 polling
 
@@ -158,17 +156,17 @@ Soft-RoCE（RXE）是 RoCE 的软件实现，允许普通网卡以 RDMA 方式�
 11. rdma_xclient man page（示例程序） — 15
 12. rdma-tutorial 开源项目 — 19
 
-来源依据：citeturn0search1turn0search3turn0search0turn0search4turn0search5turn0search6turn0search7turn0search2turn1search0turn1search1turn1search2turn1search3
+来源依据：
 
 ## 最终 Top 7
 
-1. rdma-core 官方仓库（基础权威）citeturn0search1
-2. rdma_cm(7) man page（控制面流程）citeturn0search3
-3. NVIDIA RDMA CM ID Operations（API 细节）citeturn0search0
-4. ibv_post_send man page（Send 语义）citeturn0search4
-5. ibv_post_recv man page（Recv 语义）citeturn0search5
-6. Soft-RoCE 官方文档（软件 RDMA 说明）citeturn0search6
-7. rdma-tutorial 开源项目（实践参考）citeturn1search3
+1. rdma-core 官方仓库（基础权威）
+2. rdma_cm(7) man page（控制面流程）
+3. NVIDIA RDMA CM ID Operations（API 细节）
+4. ibv_post_send man page（Send 语义）
+5. ibv_post_recv man page（Recv 语义）
+6. Soft-RoCE 官方文档（软件 RDMA 说明）
+7. rdma-tutorial 开源项目（实践参考）
 
 # 结语：小而完整的工程价值
 

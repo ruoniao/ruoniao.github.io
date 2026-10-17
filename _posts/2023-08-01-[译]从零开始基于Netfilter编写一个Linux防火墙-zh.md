@@ -1,16 +1,14 @@
 ---
-clayout    : post
+layout: post
 title     : "从零开始基于Netfilter编写一个Linux防火墙"
 date      : 2023-08-01
 lastupdate: 2023-02-11
-categories: kernel
+categories: [kernel]
 ---
-----
 
 * TOC
 {:toc}
 
-----
 
 ### 译者序
 

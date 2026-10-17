@@ -3,7 +3,7 @@ layout    : post
 title     : "Tracee框架详解之ebpf的加载"
 date      : 2023-01-25
 lastupdate: 2023-02-11
-categories: ebpf trace
+categories: [ebpf, trace]
 published: false
 ---
 
@@ -13,12 +13,10 @@ published: false
 
 最近再了解linux tracee的一些相关知识，了解到Tracee是以色列的一家安全公司AquaSecurity开源的linux监控软件，是一个轻量级的基于eBPF的事件跟踪程序。
 
-----
 
 * TOC
 {:toc}
 
-----
 # 1 概念及关系
 ## 1.1 ebpf概述
 

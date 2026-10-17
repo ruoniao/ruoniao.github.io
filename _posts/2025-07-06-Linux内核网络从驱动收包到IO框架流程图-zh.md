@@ -3,7 +3,7 @@ layout    : post
 title     : "Linux内核网络从驱动收包到IO框架流程"
 date      : 2025-07-06
 lastupdate: 2025-07-06
-categories: kernel 
+categories: [kernel]
 published: true
 ---
 
