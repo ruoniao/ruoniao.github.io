@@ -4,6 +4,7 @@ title     : "从源码到实战：rdma-core + Soft-RoCE 搭建真实 RDMA 文件
 date      : 2026-02-13
 lastupdate: 2026-02-13
 categories: [rdma]
+section: tech
 ---
 
 

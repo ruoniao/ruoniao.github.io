@@ -5,6 +5,7 @@ date      : 2024-12-24
 lastupdate: 2024-12-24
 categories: [kvm, linux]
 published: true
+section: tech
 ---
 
 

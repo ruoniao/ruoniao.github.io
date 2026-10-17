@@ -1,20 +1,6 @@
 ---
 layout: default
-title: Categories
+title: 文章归档
+nav: Blog
 ---
-
-<div id="archives">
-{% for category in site.categories %}
-  <div class="archive-group">
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <div id="#{{ category_name | slugize }}"></div>
-    <h4 class="category-head">{{ category_name }}</h4>
-    {% for post in site.categories[category_name] %}
-      <article class="archive-item">
-        <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a style="text-decoration:none" href="{{ post.url }}">{{post.title}}</a>
-      </article>
-    {% endfor %}
-  </div>
-{% endfor %}
-</div>
+<h1>文章已统一归档</h1><p>中文与英文记录现在统一收录在 Blog，按技术与杂记浏览。</p><a href="{{ '/blog/' | relative_url }}">前往 Blog →</a>

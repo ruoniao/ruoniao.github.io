@@ -1,0 +1,38 @@
+{
+  "name": "若鸟",
+  "intro": [
+    "我在这里记录对系统、模型与工程实践的学习。从 Linux 内核、虚拟化到模型推理，关注一个问题如何从原理走向可运行的实现。",
+    "写作是整理知识的过程。把源码、实验和遇到的问题留下来，也把分散的笔记连接成可以持续探索的知识体系。",
+    "这个网站也是一个长期项目：整理过去的积累，记录正在做的事情，保持对未知的好奇。"
+  ],
+  "email": "ruoniao.zg@gmail.com",
+  "github": "https://github.com/ruoniao",
+  "resume_url": null,
+  "experience": [],
+  "focus": [
+    "系统与虚拟化",
+    "模型与推理",
+    "知识的整理与实践"
+  ],
+  "projects": [
+    {
+      "title": "tinyfs：从零开始理解文件系统",
+      "description": "围绕一个小型文件系统，记录创建、读写、目录与内核接口等基础机制。通过源码注释和实验理解文件系统的工作方式。",
+      "url": "https://github.com/ruoniao/tinyfs",
+      "label": "查看源码",
+      "article": "/blog/从零开始写个文件系统-zh/"
+    },
+    {
+      "title": "RDMA 文件传输实践",
+      "description": "从 rdma-core 与 Soft-RoCE 出发，梳理连接建立、内存注册、收发队列和完成事件，将底层概念放进完整的传输流程中理解。",
+      "url": "/blog/rdma-core-soft-roce-real-rdma-transfer-zh/",
+      "label": "阅读实践记录"
+    },
+    {
+      "title": "知识山脉",
+      "description": "把技术知识组织成一片可以探索的山脉。结构、关联和掌握阶段独立存储，让每一次学习都能留下可追溯的路径。",
+      "url": "/quantified-self/",
+      "label": "进入知识山脉"
+    }
+  ]
+}

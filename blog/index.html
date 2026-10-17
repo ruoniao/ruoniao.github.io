@@ -1,0 +1,8 @@
+---
+layout: default
+title: Blog
+nav: Blog
+---
+<div class="page-intro"><p class="eyebrow">笔记与思考</p><h1>Blog</h1><p>记录技术实践，也记录技术之外的生活与想法。</p></div>
+<div class="blog-toolbar" aria-label="文章分类"><div class="filters"><a href="?category=all" data-filter="all" aria-current="true">全部</a><a href="?category=tech" data-filter="tech">技术</a><a href="?category=notes" data-filter="notes">杂记</a></div><span id="post-count" class="muted" aria-live="polite">{{ site.posts.size }} 篇记录</span></div>
+<div class="post-list">{% for post in site.posts %}<article class="post-row" data-category="{{ post.section | default: 'tech' }}"><time>{{ post.date | date: '%Y-%m-%d' }}</time><div><span class="category-label">{% if post.section == 'notes' %}杂记{% else %}技术{% endif %}</span><h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2><p>{{ post.description | default: post.content | strip_html | strip_newlines | remove: '* TOC' | remove: 'TOC' | truncate: 145 }}</p></div></article>{% endfor %}</div><p id="empty-posts" hidden>这个分类还没有文章。</p><noscript><p>分类筛选需要 JavaScript；下方仍展示全部文章。</p></noscript>

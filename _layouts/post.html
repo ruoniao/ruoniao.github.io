@@ -1,36 +1,5 @@
 ---
 layout: default
+nav: Blog
 ---
-<div class="post">
-  {% if page.image %}
-    <div class="featuredImage">
-        <img src="{{ '/assets/img/' | append: page.image }}" alt="" />
-      </div>
-  {% endif %}
-  <h1 class="postTitle">{{ page.title }}</h1>
-  <p class="meta">Published at {{ page.date | date: '%Y-%m-%d' }} | Last Update {{ page.lastupdate | date: '%Y-%m-%d' }}</p>
-
-  {% if page.last_modified %}
-  <p class="meta">Last Modified: {{ page.last_modified | date: '%Y-%m-%d' }}</p>
-  {% endif %}
-  
-  {{ content }}
-
-  <!-- POST NAVIGATION -->
-  <div class="postNav clearfix">
-    {% if page.previous.url %} 
-      <a class="prev{% if page.previous.image %} image{% endif %}" href="{{ page.previous.url }}"><span>&laquo;&nbsp;{{ page.previous.title }}</span>
-      {% if page.previous.image %} 
-        <img src="{{ '/assets/img/' | append: page.previous.image }}" alt="">
-      {% endif %}
-    </a>
-    {% endif %}  
-    {% if page.next.url %}  
-      <a class="next{% if page.next.image %} image{% endif %}" href="{{ page.next.url }}"><span>{{ page.next.title }}&nbsp;&raquo;</span>
-      {% if page.next.image %} 
-        <img src="{{ '/assets/img/' | append: page.next.image }}" alt="">
-      {% endif %} 
-      </a>
-    {% endif %} 
-  </div>
-</div>
+<article class="reading"><a class="back-link" href="{{ '/blog/' | relative_url }}">← 全部文章</a><header class="article-header"><p class="eyebrow">{% if page.section == 'notes' %}杂记{% else %}技术{% endif %}</p><h1>{{ page.title }}</h1><p class="muted"><time>{{ page.date | date: '%Y-%m-%d' }}</time>{% if page.lastupdate %} · 更新于 {{ page.lastupdate | date: '%Y-%m-%d' }}{% endif %}</p></header><div class="article-content">{{ content }}</div><nav class="post-navigation" aria-label="相邻文章">{% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% endif %}{% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}</nav></article>

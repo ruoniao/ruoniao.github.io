@@ -1,18 +1,6 @@
 ---
 layout: default
-title: Articles (cn-zh)
+title: 文章归档
+nav: Blog
 ---
-
-<div id="articles">
-  <h1>Articles</h1>
-  <ul class="posts noList">
-    {% for post in site.posts %}
-      {% if post.url contains "-zh" %}
-        <li>
-          <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</div>
+<h1>文章已统一归档</h1><p>中文与英文记录现在统一收录在 Blog，按技术与杂记浏览。</p><a href="{{ '/blog/' | relative_url }}">前往 Blog →</a>

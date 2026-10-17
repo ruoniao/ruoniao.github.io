@@ -1,0 +1,19 @@
+---
+layout: default
+title: 知识山脉
+nav: QuantifiedSelf
+map: true
+---
+<div class="mountain-app" id="mountain-app" data-base="{{ '/' | relative_url }}">
+<div id="terrain" role="region" aria-label="三维知识山脉，可用下方列表替代操作" tabindex="0"></div><div id="map-labels" aria-hidden="true"></div>
+<div class="map-heading"><h1>知识山脉</h1><p>已知之外，仍有群山。</p></div>
+<div class="map-search"><label class="sr-only" for="knowledge-search">搜索知识点</label><input id="knowledge-search" type="search" placeholder="搜索知识点…" autocomplete="off"><button id="toggle-list" aria-expanded="false" aria-controls="knowledge-list">知识目录</button></div>
+<div id="map-status" class="map-status" role="status">正在构建知识地形…</div>
+<aside id="knowledge-list" class="knowledge-list" hidden><div class="panel-heading"><h2>知识目录</h2><button id="close-list" aria-label="关闭知识目录">关闭</button></div><label for="domain-filter" class="sr-only">选择知识领域</label><select id="domain-filter"><option value="all">全部领域</option></select><p class="small" id="assessment-note"></p><div id="node-list"></div></aside>
+<aside id="node-detail" class="node-detail" hidden aria-label="知识点详情"><div class="panel-heading"><span id="node-domain"></span><button id="close-detail">关闭</button></div><h2 id="node-title"></h2><p id="node-stage"></p><p id="node-description"></p><div id="node-breadcrumb"></div><h3>关联记录</h3><div id="node-evidence"></div><button id="focus-node" class="map-button">定位这个知识点</button></aside>
+<div class="map-controls" aria-label="地图控制"><button id="zoom-in" aria-label="放大">放大</button><button id="zoom-out" aria-label="缩小">缩小</button><button id="rotate-map" aria-label="向右旋转">旋转</button><button id="reset-map">全景</button></div>
+<div class="map-bottom"><div class="legend" id="map-legend" aria-label="掌握程度图例"></div><div class="explore-actions"><p id="map-hint">拖动旋转 · 右键平移 · 滚轮缩放</p><button class="map-button primary" id="climb">沿路径登山</button></div></div>
+<noscript><div class="map-status">三维探索需要 JavaScript。你仍可以<a href="{{ '/blog/' | relative_url }}">阅读全部技术文章</a>。</div></noscript>
+</div>
+<script type="importmap">{"imports":{"three":"{{ '/assets/vendor/three/three.module.js' | relative_url }}"}}</script>
+<script type="module" src="{{ '/assets/js/knowledge.js' | relative_url }}"></script>

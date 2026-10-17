@@ -1,33 +1,10 @@
 ---
 layout: default
-title: 若鸟的博客
+title: Home
+nav: Home
 ---
-
-<div class="home" id="home">
-  <h1 class="pageTitle">Recent Posts</h1>
-  <ul class="posts noList">
-    {% for post in paginator.posts %}
-      <li>
-        <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <h3><a class="post-link" href="{{ post.url }}">{{
-            post.title }}</a></h3>
-        <p class="description">
-        {% if post.description %}
-          {{ post.description | strip_html | strip_newlines | truncate: 270 }}
-        {% else %}
-          {{ post.content | strip_html | strip_newlines | truncate: 270 }}
-        {% endif %}
-        </p>
-      </li>
-    {% endfor %}
-  </ul>
-  <!-- Pagination links -->
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous button__outline">Newer Posts</a> 
-    {% endif %}
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next button__outline">Older Posts</a>
-    {% endif %}
-  </div>
-</div>
+{% assign profile = site.data.profile %}
+<section class="intro-grid"><div><p class="eyebrow">思考 · 构建 · 持续探索</p><h1>你好，我是 {{ profile.name }}</h1>{% for paragraph in profile.intro %}<p class="intro-copy">{{ paragraph }}</p>{% endfor %}</div><aside class="focus"><h2>目前关注</h2>{% for item in profile.focus %}<a href="{{ '/quantified-self/' | relative_url }}">{{ item }} <span aria-hidden="true">↗</span></a>{% endfor %}<div class="focus-links"><a href="{{ profile.github }}">GitHub <span aria-hidden="true">↗</span></a><a href="{{ '/about/' | relative_url }}">关于我 <span aria-hidden="true">→</span></a></div></aside></section>
+<section class="section"><div class="section-heading"><h2>经历</h2><a href="{{ '/about/' | relative_url }}">完整介绍 →</a></div>{% if profile.experience.size > 0 %}{% for item in profile.experience %}<div class="experience-row"><time>{{ item.period }}</time><div><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div></div>{% endfor %}{% else %}<p class="muted">个人经历正在整理中。你可以先从下面的项目与文章了解我的关注方向。</p>{% endif %}</section>
+<section class="section"><div class="section-heading"><h2>项目与实践</h2><span class="muted">从问题出发，留下过程。</span></div>{% for project in profile.projects %}<article class="project-entry"><h3>{{ project.title }}</h3><p>{{ project.description }}</p><div class="text-links"><a href="{{ project.url | relative_url }}">{{ project.label }} →</a>{% if project.article %}<a href="{{ project.article | relative_url }}">实践笔记 →</a>{% endif %}</div></article>{% endfor %}</section>
+<section class="section lower-grid"><div><div class="section-heading"><h2>最近的记录</h2><a href="{{ '/blog/' | relative_url }}">全部 →</a></div><ul class="recent-list">{% for post in site.posts limit:4 %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><time>{{ post.date | date: '%Y-%m-%d' }}</time></li>{% endfor %}</ul></div><aside><h2>知识的边界，仍在延伸</h2><p>用一片山脉整理技术知识。沿着基础概念向上探索，把文章、实践和问题连接起来，也看见尚未抵达的地方。</p><a href="{{ '/quantified-self/' | relative_url }}">探索 QuantifiedSelf →</a></aside></section>

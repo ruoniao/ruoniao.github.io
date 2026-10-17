@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "domains": {
+    "math": {
+      "x": -42,
+      "z": 28,
+      "radius": 24,
+      "height": 30
+    },
+    "models": {
+      "x": 18,
+      "z": 0,
+      "radius": 35,
+      "height": 53
+    },
+    "systems": {
+      "x": -52,
+      "z": -26,
+      "radius": 32,
+      "height": 47
+    },
+    "virtualization": {
+      "x": 65,
+      "z": -30,
+      "radius": 28,
+      "height": 44
+    }
+  },
+  "distantPeaks": [
+    {
+      "x": -24,
+      "z": -90,
+      "radius": 45,
+      "height": 95
+    },
+    {
+      "x": 55,
+      "z": -125,
+      "radius": 52,
+      "height": 116
+    },
+    {
+      "x": -95,
+      "z": -130,
+      "radius": 45,
+      "height": 105
+    }
+  ],
+  "camera": {
+    "position": [
+      85,
+      78,
+      140
+    ],
+    "target": [
+      0,
+      39,
+      -42
+    ]
+  }
+}

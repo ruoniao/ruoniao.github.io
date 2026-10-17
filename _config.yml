@@ -1,5 +1,5 @@
 title: 若鸟的博客
-description: 若鸟的博客
+description: 若鸟的个人主页：系统、模型与工程实践，笔记和持续探索的知识山脉。
 
 url: https://ruoniao.github.io
 paginate_path: "blog/page:num/"
@@ -7,22 +7,18 @@ permalink: blog/:title/
 
 markdown: kramdown
 highlighter: rouge
-plugins: [jekyll-paginate]
-paginate: 10
+plugins: []
+
 
 navigation:
  - title: Home
-   url: /index.html
- - title: Articles (EN)
-   url: /articles
- - title: Articles (中文)
-   url: /articles-zh
- - title: Categories
-   url: /categories
+   url: /
+ - title: Blog
+   url: /blog/
+ - title: QuantifiedSelf
+   url: /quantified-self/
  - title: About
-   url: /about
-# - title: Donate
-#   url: /donate
+   url: /about/
 
 social:
    github: ruoniao
@@ -42,3 +38,5 @@ google_analytics: "G-8T0256ERR4"
 
 # development configurations
 host: 0.0.0.0
+
+exclude: [Gemfile, Gemfile.lock, README.md, design-qa.md, docs, scripts, vendor, node_modules]

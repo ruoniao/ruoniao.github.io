@@ -1,0 +1,379 @@
+{
+  "version": 1,
+  "note": "知识结构为初始整理；掌握阶段尚待本人评估。文章链接是学习记录，不代表能力评级。",
+  "stages": [
+    {
+      "value": null,
+      "label": "待评估",
+      "color": "#8196ac"
+    },
+    {
+      "value": 0,
+      "label": "未开始",
+      "color": "#52667f"
+    },
+    {
+      "value": 1,
+      "label": "已接触",
+      "color": "#8abbdc"
+    },
+    {
+      "value": 2,
+      "label": "辅助应用",
+      "color": "#5ab1e7"
+    },
+    {
+      "value": 3,
+      "label": "独立应用",
+      "color": "#44d5ff"
+    },
+    {
+      "value": 4,
+      "label": "总结指导",
+      "color": "#c0f2ff"
+    }
+  ],
+  "domains": [
+    {
+      "id": "math",
+      "title": "数学基础",
+      "description": "理解模型与训练的共同语言。"
+    },
+    {
+      "id": "models",
+      "title": "模型与推理",
+      "description": "从网络结构到推理执行与性能分析。"
+    },
+    {
+      "id": "systems",
+      "title": "系统与网络",
+      "description": "内核、文件系统与数据传输。"
+    },
+    {
+      "id": "virtualization",
+      "title": "虚拟化",
+      "description": "理解虚拟机与硬件之间的边界。"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "math",
+      "title": "数学基础",
+      "parent": null,
+      "domain": "math",
+      "description": "向量、概率与优化的基础。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "linear-algebra",
+      "title": "线性代数",
+      "parent": "math",
+      "domain": "math",
+      "description": "向量空间、矩阵分解与线性变换。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "probability",
+      "title": "概率论",
+      "parent": "math",
+      "domain": "math",
+      "description": "随机变量、分布、期望与统计推断。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "calculus",
+      "title": "微积分",
+      "parent": "math",
+      "domain": "math",
+      "description": "导数、梯度与积分。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "discrete",
+      "title": "离散数学",
+      "parent": "math",
+      "domain": "math",
+      "description": "逻辑、集合、图与组合。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "optimization",
+      "title": "优化与梯度",
+      "parent": "calculus",
+      "domain": "math",
+      "description": "梯度下降、目标函数与收敛。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "models",
+      "title": "模型与推理",
+      "parent": null,
+      "domain": "models",
+      "description": "连接模型结构、训练和推理工程。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "neural-networks",
+      "title": "神经网络",
+      "parent": "models",
+      "domain": "models",
+      "description": "层、激活函数与反向传播。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "transformer",
+      "title": "Transformer",
+      "parent": "neural-networks",
+      "domain": "models",
+      "description": "注意力、位置编码与网络结构。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "training",
+      "title": "模型训练",
+      "parent": "neural-networks",
+      "domain": "models",
+      "description": "损失函数、优化器与训练流程。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "quantization",
+      "title": "模型量化",
+      "parent": "transformer",
+      "domain": "models",
+      "description": "量化精度、尺度与误差。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "fp8",
+      "title": "FP8 与混合精度",
+      "parent": "quantization",
+      "domain": "models",
+      "description": "权重、激活与精度开销。",
+      "stage": null,
+      "evidence": [
+        {
+          "title": "模型的几个估算问题",
+          "url": "/blog/模型的几个估算问题/"
+        }
+      ]
+    },
+    {
+      "id": "inference",
+      "title": "推理优化",
+      "parent": "transformer",
+      "domain": "models",
+      "description": "计算、访存与调度之间的平衡。",
+      "stage": null,
+      "evidence": [
+        {
+          "title": "推理流程原理图",
+          "url": "/blog/推理原理图-zh/"
+        }
+      ]
+    },
+    {
+      "id": "kv-cache",
+      "title": "KV cache",
+      "parent": "inference",
+      "domain": "models",
+      "description": "缓存容量、上下文长度和并发预算。",
+      "stage": null,
+      "evidence": [
+        {
+          "title": "模型的几个估算问题",
+          "url": "/blog/模型的几个估算问题/"
+        }
+      ]
+    },
+    {
+      "id": "batching",
+      "title": "批处理与调度",
+      "parent": "inference",
+      "domain": "models",
+      "description": "吞吐、延迟与连续批处理。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "profiling",
+      "title": "性能分析",
+      "parent": "inference",
+      "domain": "models",
+      "description": "定位算力、带宽与通信瓶颈。",
+      "stage": null,
+      "evidence": [
+        {
+          "title": "模型的几个估算问题",
+          "url": "/blog/模型的几个估算问题/"
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "title": "系统与网络",
+      "parent": null,
+      "domain": "systems",
+      "description": "从内核机制到系统工程。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "linux",
+      "title": "Linux 内核",
+      "parent": "systems",
+      "domain": "systems",
+      "description": "接口、内存、调度与内核调试。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "filesystem",
+      "title": "文件系统",
+      "parent": "linux",
+      "domain": "systems",
+      "description": "目录、文件操作与持久化。",
+      "stage": null,
+      "evidence": [
+        {
+          "title": "从零开始写个文件系统",
+          "url": "/blog/从零开始写个文件系统-zh/"
+        }
+      ]
+    },
+    {
+      "id": "ebpf",
+      "title": "eBPF 与追踪",
+      "parent": "linux",
+      "domain": "systems",
+      "description": "内核可观测性与程序加载。",
+      "stage": null,
+      "evidence": [
+        {
+          "title": "BTF 编译问题",
+          "url": "/blog/编译内核支持BTF报错解决-zh/"
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "title": "网络收发",
+      "parent": "systems",
+      "domain": "systems",
+      "description": "从驱动到用户态 IO。",
+      "stage": null,
+      "evidence": [
+        {
+          "title": "网络收包到 IO 框架",
+          "url": "/blog/Linux内核网络从驱动收包到IO框架流程图-zh/"
+        }
+      ]
+    },
+    {
+      "id": "rdma",
+      "title": "RDMA",
+      "parent": "network",
+      "domain": "systems",
+      "description": "内存注册、队列与完成事件。",
+      "stage": null,
+      "evidence": [
+        {
+          "title": "RDMA 文件传输",
+          "url": "/blog/rdma-core-soft-roce-real-rdma-transfer-zh/"
+        }
+      ]
+    },
+    {
+      "id": "roce",
+      "title": "Soft-RoCE 实践",
+      "parent": "rdma",
+      "domain": "systems",
+      "description": "使用软件 RDMA 完成真实传输。",
+      "stage": null,
+      "evidence": [
+        {
+          "title": "Soft-RoCE 实践",
+          "url": "/blog/rdma-core-soft-roce-real-rdma-transfer-zh/"
+        }
+      ]
+    },
+    {
+      "id": "virtualization",
+      "title": "虚拟化",
+      "parent": null,
+      "domain": "virtualization",
+      "description": "操作系统与硬件之间的抽象。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "cpu-virt",
+      "title": "CPU 虚拟化",
+      "parent": "virtualization",
+      "domain": "virtualization",
+      "description": "特权级、VM Exit 与执行控制。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "kvm",
+      "title": "KVM",
+      "parent": "cpu-virt",
+      "domain": "virtualization",
+      "description": "Linux 虚拟化机制与实践。",
+      "stage": null,
+      "evidence": []
+    },
+    {
+      "id": "debug",
+      "title": "虚拟机调试",
+      "parent": "kvm",
+      "domain": "virtualization",
+      "description": "寄存器、异常与故障分析。",
+      "stage": null,
+      "evidence": [
+        {
+          "title": "记录一次 KVM 下 Windows 蓝屏问题",
+          "url": "/blog/记录一次kvm下Windows蓝屏问题-zh/"
+        }
+      ]
+    },
+    {
+      "id": "memory-virt",
+      "title": "内存虚拟化",
+      "parent": "virtualization",
+      "domain": "virtualization",
+      "description": "地址转换与二级页表。",
+      "stage": null,
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "from": "linear-algebra",
+      "to": "transformer",
+      "type": "related"
+    },
+    {
+      "from": "optimization",
+      "to": "training",
+      "type": "related"
+    },
+    {
+      "from": "rdma",
+      "to": "inference",
+      "type": "related"
+    }
+  ]
+}
